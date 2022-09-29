@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   },
 };
 function user(state = INITIAL_STATE, action) {
-    console.log(action);
+  console.log(action);
   switch (action.type) {
   case USER_SUBMIT_EMAIL:
     return { ...state, user: action.payload };
