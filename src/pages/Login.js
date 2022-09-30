@@ -45,7 +45,8 @@ class Login extends React.Component {
         />
         <button
           type="button"
-          disabled={ !email.includes('@') || senha.length < passwordMin }
+          disabled={ !email.includes('@')
+          || !email.includes('.com') || senha.length < passwordMin }
           name="Enviar"
           onClick={ this.handleSubmit }
         >

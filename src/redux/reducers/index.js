@@ -5,8 +5,8 @@ import wallet from './wallet';
 import user from './user';
 
 const rootReducer = combineReducers({
-  wallet,
   user,
+  wallet,
 });
 
 export default rootReducer;
