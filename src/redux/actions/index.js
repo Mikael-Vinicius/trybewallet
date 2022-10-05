@@ -2,7 +2,8 @@
 export const USER_SUBMIT_EMAIL = 'USER_SUBMIT_EMAIL';
 export const REQUEST_CURRENCY = 'REQUEST_CURRENCY';
 export const RECEIVE_CURRENCY = 'RECEIVE_CURRENCY';
-
+export const USER_SUBMIT_DATA = 'USER_SUBMIT_DATA';
+export const ADD_DATA = 'ADD_DATA';
 const requestCurrency = () => ({
   type: REQUEST_CURRENCY,
 });
@@ -20,5 +21,3 @@ export function fetchCurrency() {
       .then((currencies) => dispatch(receiveCurrency(currencies)));
   };
 }
-
-// export { RECEIVE_CURRENCY, REQUEST_CURRENCY, USER_SUBMIT_EMAIL };
