@@ -40,31 +40,30 @@
   }
 }
 
-td,
-th {
-    border: 1px solid rgb(190, 190, 190);
-    padding: 10px;
+td , th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px;
 }
 
 td {
-    text-align: center;
+  text-align: center;
 }
 
-tr:nth-child(even) {
-    background-color: #eee;
+tr:nth-child( even ) {
+  background-color: #eee;
 }
 
-th[scope="col"] {
-    background-color: #696969;
-    color: #fff;
+th col {
+  background-color: dimgrey;
+  color: white;
 }
 
-th[scope="row"] {
-    background-color: #d7d9f2;
+th {
+  background-color: #d7d9f2;
 }
 
 caption {
-    padding: 10px;
-    caption-side: bottom;
+  caption-side: bottom;
+  padding: 10px;
 }
 
