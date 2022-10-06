@@ -20,15 +20,23 @@ describe('testando o componente wallet', () => {
     expect(inputDescription).toBeInTheDocument();
     expect(addBtn).toBeInTheDocument();
   });
-  it('Testando se ao enviar as informaçoes os inputs "descrição e valor sao limpos"', () => {
+  it('Testando se ao enviar as informaçoes os inputs "descrição e valor sao limpos"', async () => {
     renderWithRouterAndRedux(<Wallet />);
     const inputDescription = screen.getByTestId('description-input');
     const inputValue = screen.getByTestId('value-input');
     const addBtn = screen.getByRole('button', { name: 'Adicionar despesa' });
+    const tagInput = screen.getByTestId('tag-input');
+    const currencyInput = await screen.findByTestId('currency-input');
+    const option = await screen.findByRole('option', { name: 'USD' });
+    expect(option).toBeInTheDocument();
     userEvent.type(inputValue, 123);
     userEvent.type(inputDescription, 123);
+    expect(tagInput.value).toBe('Alimentação');
+    expect(currencyInput.value).toContain('USD');
     userEvent.click(addBtn);
     expect(inputValue.value).toBe('');
     expect(inputDescription.value).toBe('');
+    const tableContent = await screen.findByText('Real');
+    expect(tableContent).toBeInTheDocument();
   });
 });
