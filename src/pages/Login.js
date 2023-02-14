@@ -26,33 +26,36 @@ class Login extends React.Component {
     const { email, senha } = this.state;
     const passwordMin = 6;
     return (
-      <div>
-        Email:
-        <input
-          onChange={ this.handleChange }
-          data-testid="email-input"
-          type="text"
-          name="email"
-          value={ email }
-        />
-        Senha
-        <input
-          data-testid="password-input"
-          type="password"
-          name="senha"
-          value={ senha }
-          onChange={ this.handleChange }
-        />
-        <button
-          type="button"
-          disabled={ !email.includes('@')
+      <div className="login">
+        <img alt="logotipo" src="https://www.logomaker.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6kh...eErhBMmx...OwXs1M3EMoAJtliYrh...Fs8f85" />
+        <div className="login-inputs">
+          Email
+          <input
+            onChange={ this.handleChange }
+            data-testid="email-input"
+            type="text"
+            name="email"
+            value={ email }
+          />
+          Senha
+          <input
+            data-testid="password-input"
+            type="password"
+            name="senha"
+            value={ senha }
+            onChange={ this.handleChange }
+          />
+          <button
+            type="button"
+            disabled={ !email.includes('@')
           || !email.includes('.com') || senha.length < passwordMin }
-          name="Enviar"
-          onClick={ this.handleSubmit }
-        >
-          Entrar
+            name="Enviar"
+            onClick={ this.handleSubmit }
+          >
+            Entrar
 
-        </button>
+          </button>
+        </div>
       </div>
     );
   }

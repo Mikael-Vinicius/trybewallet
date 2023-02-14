@@ -14,9 +14,9 @@ class WalletForm extends Component {
     exchangeRates: {},
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchCurrency());
+    await dispatch(fetchCurrency());
   }
 
   handleChange = ({ target }) => {
@@ -61,7 +61,7 @@ class WalletForm extends Component {
     const { value, description, method, tag, currency } = this.state;
     return (
       <div>
-        <form>
+        <form className="walletForm">
           valor:
           <input
             onChange={ this.handleChange }
